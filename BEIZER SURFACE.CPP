@@ -36,35 +36,9 @@ Dept of CSE, AIET Mijar
 void init(void) 
 { 
  glClearColor (0.0, 0.0, 0.0, 0.0); 
- /* 
- GL_MAP1_VERTEX_3 -- specifies that 3-dimensional control points are 
- provided and 3-D vertices should be produced 
- 0 -- min u 
- 1 -- max u 
- 3 -- ustride, number of values to advance in the data between two 
- consecutive control points ( see diagram below ) 
- 4 -- order of u ( = degree + 1 ) 
- 0 -- min v 
- 1 -- max v 
- 12 -- vstride ( see diagram below ) 
- 4 -- order of v ( = degree + 1 ) 
- */ 
  glMap2f(GL_MAP2_VERTEX_3, 0, 1, 3, 4, 
  0, 1, 12, 4, &ctrlpoints[0][0][0]); 
  glEnable(GL_MAP2_VERTEX_3); 
- /* 
- glMapGrid2f() -- defines a grid going from u1 to u2; v1 to v2 in 
- evenly-spaced steps 
- 20 -- number of u steps 
- 0.0 -- u1 ( starting u ) 
- 1.0 -- u2 ( ending u ) 
- 20 -- number of v steps 
- 0.0 -- v1 ( starting v ) 
- 1.0 -- v2 ( ending v ) 
- 
- use with glEvalMesh2() 
- */ 
- //glMapGrid2f(20, 0.0, 1.0, 20, 0.0, 1.0); 
  glEnable(GL_DEPTH_TEST); 
  glShadeModel(GL_FLAT); 
 } 
